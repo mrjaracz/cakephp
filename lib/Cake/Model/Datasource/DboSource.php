@@ -1465,7 +1465,7 @@ class DboSource extends DataSource {
 				continue;
 			}
 
-			$resultPrimaryKey = $result[$modelAlias][$primaryKey];
+			$resultPrimaryKey = !empty($result[$modelAlias][$primaryKey]) ? $result[$modelAlias][$primaryKey] : false;
 
 			$merged = array();
 			foreach ($assocResultSet as $data) {
